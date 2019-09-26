@@ -1,4 +1,4 @@
-class Movie < ApplicationRecord
+ class Movie < ApplicationRecord
   belongs_to :director,
     class_name: :Actor,
     foreign_key: :director_id,
