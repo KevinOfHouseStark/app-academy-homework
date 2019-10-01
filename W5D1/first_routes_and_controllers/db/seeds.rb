@@ -16,3 +16,7 @@ artwork1 = Artwork.create!(title: 'The Starks', image_url: 'gameofthrones.com', 
 artwork2 = Artwork.create!(title: 'Breaking Bad', image_url: 'breakingbad.com', artist_id: user2.id)
 artworkshare1 = ArtworkShare.create!(artwork_id: artwork1.id, viewer_id: user1.id)
 artworkshare2 = ArtworkShare.create!(artwork_id: artwork2.id, viewer_id: user2.id)
+comment1 = Comment.create!(artwork_id: artwork1.id, user_id: user1.id, body: "whatever 1")
+comment2 = Comment.create!(artwork_id: artwork1.id, user_id: user2.id, body: "whatever 2")
+comment3 = Comment.create!(artwork_id: artwork2.id, user_id: user1.id, body: "whatever 3")
+comment4 = Comment.create!(artwork_id: artwork2.id, user_id: user2.id, body: "whatever 4")
