@@ -16,7 +16,7 @@ class UsersController < ApplicationController
         if user.save
             render json: user
         else
-            render jason: user.errors.full_messages, status: 422
+            render json: user.errors.full_messages, status: 422
         end
     end
 
@@ -30,9 +30,9 @@ class UsersController < ApplicationController
         user = User.find(params[:id])
 
         if user.update(user_params)
-            render jason: user
+            render json: user
         else
-            render jason: user.errors.full_messages, status: 422
+            render json: user.errors.full_messages, status: 422
         end
     end
 
