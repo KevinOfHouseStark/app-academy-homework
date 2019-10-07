@@ -1,0 +1,21 @@
+<h1> Log-in </h1>
+
+Don't have an account? <a href=<%= new_users_url %>> Sign up here!</a>
+
+<br><br>
+
+<form class='form' action="<%= session_url %>" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+    <label for="new_user_email">Email: </label>
+    <input id="new_user_email" type="text" name="user[email]">
+
+    <br><br>
+
+    <label for="new_user_password">Password: </label>
+    <input id="new_user_password" type="text" name="user[password]">
+
+    <br><br>
+
+    <input type="submit">
+</form>
