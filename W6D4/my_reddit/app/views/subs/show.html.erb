@@ -1,0 +1,15 @@
+<h1><%= @sub.title %></h1>
+
+<p><%= @sub.description %></p>
+
+<%= link_to 'Create Post', new_sub_post_url(@sub) %><br>
+
+<ul>
+  <% @sub.posts.order(created_at: :desc).each do |post| %>
+    <li><%= link_to post.title, post_url(post) %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Edit Sub', edit_sub_url if current_user.id == @sub.moderator_id%>
+<br>
+<%= link_to 'All Subs', subs_url %>

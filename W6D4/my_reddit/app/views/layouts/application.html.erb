@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyReddit</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if logged_in? %>
+      <p><%= current_user.username %></p>
+      <%= sign_out_button %>
+    <% else %>
+      <%= sign_in_button unless params[:controller] == 'sessions' %>
+      <%= create_account_button unless params[:controller] == 'users'%>
+    <% end %>
+
+    <p><%= flash[:success] %></p>
+    <p><%= flash[:errors] %></p>
+
+    <%= yield %>
+  </body>
+</html>

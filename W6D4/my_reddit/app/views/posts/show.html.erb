@@ -1,0 +1,24 @@
+<h1><%= @post.title %></h1>
+
+<%= @post.content %>
+<%= link_to 'Edit Post', edit_post_url(@post) if current_user.id == @post.author_id %>
+
+<ul>
+  <% Comment.where("post_id = ? AND parent_comment_id IS NULL", @post.id).each do |comment| %>
+    <li><%= render "comments/comment", comment: comment %></li>
+  <% end %>
+</ul>
+
+<form action="<%= post_comments_url(@post) %>" method="POST">
+  <%= auth_token %>
+  
+  <label> Comment:
+    <textarea name="comment[content]"></textarea>
+  </label>
+
+  <button>Add Comment</button>
+</form>
+
+<br><br>
+<%= link_to 'Sub', sub_url(@post.sub) %>
+<%= link_to 'All Subs', subs_url %>
