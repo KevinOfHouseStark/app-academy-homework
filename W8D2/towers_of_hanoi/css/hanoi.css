@@ -1,0 +1,67 @@
+.hanoi {
+  display: flex;
+  width: 600px;
+}
+
+ul {
+  border-bottom: 10px solid black;
+  list-style: none;
+  margin: auto 10px;
+  width: 600px;
+  padding: 0;
+  text-align: center;
+}
+
+li {
+  width: 200px;
+  height: 50px;
+  margin: 10px auto;
+  border-radius: 30px;
+}
+
+li.disc-3 {
+  width: 180px;
+}
+
+li.disc-2 {
+  width: 120px;
+}
+
+li.disc-1 {
+  width: 60px;
+}
+
+li.disc-1, li.disc-2, li.disc-3 {
+  background: gray;
+}
+
+body {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+figure {
+  margin: auto;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  text-align: center;
+}
+
+ul:hover {
+  border-bottom: 10px solid blue;
+}
+
+ul.clicked {
+  border-bottom: 10px solid red;
+}
+
+.game-over li.disc-1,
+.game-over li.disc-2,
+.game-over li.disc-3 {
+  background: green;
+}
